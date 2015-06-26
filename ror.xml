@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://photomotto.xyz/</title>
+  <link>http://photomotto.xyz/</link>
+
+<item>
+     <link>http://photomotto.xyz/</link>
+     <title>フォトもっと - 写真素材サイト選択サイト</title>
+     <description>今欲しい写真素材サイトが15秒でわかる！国内外の写真素材サイトを完全網羅(2015-05-26:95)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://photomotto.xyz/free.php</link>
+     <title>日本語写真素材サイト - フォトもっと</title>
+     <description>今必要な日本語写真素材サイトが15秒でわかる！日本語の写真素材サイトを完全網羅(2015-05-26:95)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://photomotto.xyz/pay.php</link>
+     <title>英語写真素材サイト - フォトもっと</title>
+     <description>今必要な英語写真素材サイトが15秒でわかる！英語の写真素材サイトを完全網羅(2015-05-26:95)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://photomotto.xyz/add.php</link>
+     <title>サイト追加|フォトもっと</title>
+     <description>写真素材ポータル</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://photomotto.xyz/index.php</link>
+     <title>フォトもっと - 写真素材サイト選択サイト</title>
+     <description>今欲しい写真素材サイトが15秒でわかる！国内外の写真素材サイトを完全網羅(2015-05-26:95)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
