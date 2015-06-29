@@ -49,6 +49,12 @@ function f_id_sitemap($db_conn)
     $header .= '<priority>0.8</priority>'."\n";
     $header .= '</url>'."\n";
     // 
+    $header .= '<url>'."\n";
+    $header .= '<loc>http://phototal.link/news.php</loc>'."\n";
+    $header .= '<lastmod>'.$time.'</lastmod>'."\n";
+    $header .= '<changefreq>weekly</changefreq>'."\n";
+    $header .= '<priority>0.8</priority>'."\n";
+    $header .= '</url>'."\n";
 
     //googleサイトマップ制限 URL50000,50MB 500ファイル
     $base_dir = "/home/midasmn/phototal.link/public_html/";

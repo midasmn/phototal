@@ -17,6 +17,9 @@ switch ($html_page) {
   case 'keyword.php':
     $keyword_st = 'class="active"';
     break;
+  case 'news.php':
+    $news_st = 'class="active"';
+    break;
 }
 ?>
 <nav class="navbar navbar-default">
@@ -40,6 +43,7 @@ switch ($html_page) {
         <li <?php echo $pay_st;?>><a href="pay.php"><?php echo $menu_tab3_st;?><small> (<?php echo $tab_pay_cnt;?> site )</small></a></li>
         <li <?php echo $index_st;?>><a href="/"><?php echo $menu_tab4_st;?><small> (<?php echo $tab_all_cnt;?> site )</small></a></li>
         <li <?php echo $list_st;?>><a href="list.php"><?php echo $menu_tab5_st;?><small> (<?php echo $tab_all_cnt;?> site )</small></a></li>
+        <li <?php echo $news_st;?>><a href="list.php"><?php echo $menu_tab6_st;?><small></small></a></li>
       </ul>
       <!-- 右メニュー -->
       <ul class="nav navbar-nav navbar-right">

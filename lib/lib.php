@@ -194,7 +194,7 @@ function f_get_cul($db_conn,$exm_carno,$exm_itemno,$q,$language_id)
       }
       // アイテム
       $rtn_st .='<div class="col-md-2 col-sm-6 col-xs-12" >';//col-md-2
-      $rtn_st .='<a href="index.php?exm_carno='.$exm_ii.'&exm_itemno='.$id.'&q='.$q.'" class="thumbnail">';
+      $rtn_st .='<a href="keyword.php?exm_carno='.$exm_ii.'&exm_itemno='.$id.'&q='.$q.'" class="thumbnail">';
       // $rtn_st .='<img src="'.$img_path.'" alt="'.$name.'" style="max-width:100%;'.$bk_col.'">';
 
       // 
