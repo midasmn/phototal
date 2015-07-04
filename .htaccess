@@ -1,0 +1,5 @@
+suPHP_ConfigPath /home/midasmn/phototal.link/xserver_php/
+AddHandler x-httpd-php5.5 .php .phps
+AddHandler fcgid-script .php .phps
+FCGIWrapper "/home/midasmn/phototal.link/xserver_php/php-cgi -c /home/midasmn/phototal.link/xserver_php/php.ini" .php
+FCGIWrapper "/home/midasmn/phototal.link/xserver_php/php-cgi -c /home/midasmn/phototal.link/xserver_php/php.ini" .phps

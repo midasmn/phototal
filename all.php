@@ -26,37 +26,44 @@ if ( isset($_REQUEST['language_id']) ) {
 } else {
   $language_id= 9; // 日本
 }
-// $language_id= 2; // 日本]
+// $language_id= 2; // 
 $exm_carno=$_GET['exm_carno'];
 $exm_itemno=$_GET['exm_itemno'];
 $name = f_get_comon_item($db_conn,'tbl_imagesite','name','id',$exm_itemno);
 
 $lang = f_get_tran($db_conn,$language_id,'lang');
-$title = f_get_tran($db_conn,$language_id,'title-free');
+$title = f_get_tran($db_conn,$language_id,'title');
 if($name)
 {
   $title = $name.' | '.$title;
 }
-$keywords = f_get_tran($db_conn,$language_id,'keywords-free');
-$description = f_get_tran($db_conn,$language_id,'description-free');
-$h1_index = f_get_tran($db_conn,$language_id,'h1_free');
-$h2_index = f_get_tran($db_conn,$language_id,'h2_free');
+$keywords = f_get_tran($db_conn,$language_id,'keywords');
+$description = f_get_tran($db_conn,$language_id,'description');
+$h1_index = f_get_tran($db_conn,$language_id,'h1_index');
+$h2_index = f_get_tran($db_conn,$language_id,'h2_index');
 $t0 = f_get_item_cnt($db_conn,0);
 $t1 = f_get_item_cnt($db_conn,1);
 $t2 = f_get_item_cnt($db_conn,2);
-$tab_all_cnt = f_get_item_cnt($db_conn,99);
+
 $menu_tab1_st = f_get_tran($db_conn,$language_id,'menu_tab1_st');
 $menu_tab2_st = f_get_tran($db_conn,$language_id,'menu_tab2_st');
 $menu_tab3_st = f_get_tran($db_conn,$language_id,'menu_tab3_st');
 $menu_tab4_st = f_get_tran($db_conn,$language_id,'menu_tab4_st');
 $menu_tab5_st = f_get_tran($db_conn,$language_id,'menu_tab5_st');
 $menu_tab6_st = f_get_tran($db_conn,$language_id,'menu_tab6_st');
+
 $tgcnt = $t0+$t1+$t2;
+$tab_all_cnt = f_get_item_cnt($db_conn,99);
 $description .= '('.date(Y).'-'.date(m).'-'.date(d).':'.$tgcnt.')';
 $site_name = f_get_tran($db_conn,$language_id,'site_name');
 $site_name .= ' ( '.$tgcnt.' SITE )';
 $seek = f_get_tran($db_conn,$language_id,'seek');
+
 // 
+// $title = "Phototalもっと";
+// $keywords = "写真素材 ロイヤリティフリー クリエイティブコモンズ ";
+// $description = "写真素材ポータル";
+//
 $og_title = $title;
 $og_image = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 $og_url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
@@ -76,23 +83,32 @@ $article_publisher = "https://www.facebook.com/photomottoxyz";
 // //
 $twitter_site = "@photomottoZ";
 $sns_url = "http://".$_SERVER["HTTP_HOST"].htmlspecialchars($_SERVER["PHP_SELF"]);
-//アクティブメニュー
-$rtn_tab1 = f_get_tab_img($db_conn,0,1,"img-responsive img-thumbnail img-responsive-overwrite");
+
+$rtn_tab2 = f_get_tab_img($db_conn,99,99,"img-responsive img-circle img-responsive-overwrite");
+// 登録数
 $tab_keyword_cnt = f_get_item_cnt($db_conn,0);
 $tab_free_cnt = f_get_item_cnt($db_conn,1);
 $tab_pay_cnt = f_get_item_cnt($db_conn,2);
-$tab=1;
-$html_page='free.php';
 
-// 広告非表示
+// 
+$tab=99;
+$html_page='all.php';
 $ad=$_GET['ad'];
+
+
+
 $rtn_ifream_st = f_get_if_cul($db_conn,$exm_carno,$exm_itemno,$tab,$html_page);
+
 ?>
 <?php require('header.php');?>
 <body>
-<div id="wrap"><!-- ページのコンテンツすべてをwrapする（フッター以外） -->
+<div id="wrap">
 <?php require('menu.php');?>
+
+
+<!-- ページのコンテンツすべてをwrapする（フッター以外） -->
   <div class="container"  style="margin-top: 1px;">
+    <div class="row" >
 
       <?php if($exm_itemno) :?>
       <?php else: ?>
@@ -126,22 +142,26 @@ $rtn_ifream_st = f_get_if_cul($db_conn,$exm_carno,$exm_itemno,$tab,$html_page);
             (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
           </div>
-          <?php endif; ?>
+        <?php endif; ?>
         <?php endif; ?>
         <!-- </div> -->
         <!-- 広告 -->
 
-      <!-- タイトル -->
-      <div class="col-md-12" style="margin-top: 15px;text-align: center;">
-        <h1 class="h3 " style="color:white;text-transform: none; ">
-          <?php echo $h1_index; ?>
-        </h1>
-        <h2 class="h5" style = "color:#A6A6A6;">
-          <?php echo $h2_index; ?>
-        </h2>
-      </div>
-      <?php endif; ?><!-- .タイトル --> 
-    
+        <!-- タイトル -->
+        <div class="col-md-12" style="margin-top: 15px;text-align: center;">
+          <h1 class="h3 " style="color:white;text-transform: none; ">
+            <?php echo $h1_index; ?>
+          </h1>
+          <h2 class="h5" style = "color:#A6A6A6;">
+            <?php echo $h2_index; ?>
+          </h2>
+        </div>
+        <?php endif; ?><!-- .タイトル -->
+
+    </div>
+
+
+
       <div class="row col-md-12 " style="margin-top: 20px;">
         <?php echo $rtn_ifream_st; ?>
       </div>
@@ -150,37 +170,42 @@ $rtn_ifream_st = f_get_if_cul($db_conn,$exm_carno,$exm_itemno,$tab,$html_page);
       <?php require('legend.php');?>
       <!-- .アイコン -->
 
+      <!-- <iframe src="http://pixabay.com/" frameborder="1" width="600" height="600" style="width:100%;"></iframe> -->
+      <!-- <iframe src="http://pixabay.com/" frameborder="1" width="600" height="600" style="zoom:0.55"></iframe> -->
+
       <!-- ページトップへ -->
-      <a href="#rtn_div" class="btn btn-default pull-right" id="page-top">
+      <a href="" class="btn btn-default pull-right" id="page-top">
         <i class="fa fa-angle-up fa-fw"></i>
       </a>
 
-
+    </div><!-- .row -->
   </div><!-- .container -->
 </div><!-- .wrap -->
 
-<!-- 広告 -->
-<div class="col-md-12" style="margin-top: 20px;height: 80px;text-align: center;">
-  <!-- ＜スポンサーリンク＞ -->
-  <?php if (is_mobile()) :?>
-  <!-- スマートフォン向けコンテンツ -->
-  <?php else: ?>
-  <?php if ($ad) :?>
-  <?php else: ?>
-  <!-- PC向けコンテンツ -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- PhototalもっとビックバナーPC -->
-  <ins class="adsbygoogle"
-  style="display:inline-block;width:970px;height:90px"
-  data-ad-client="ca-pub-6625574146245875"
-  data-ad-slot="4098354003"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <?php endif; ?>
-  <?php endif; ?>
-</div>
-<!-- 広告 -->
+        <!-- 広告 -->
+        <div class="col-md-12" style="margin-top: 20px;height: 80px;text-align: center;">
+          <!-- ＜スポンサーリンク＞ -->
+          <?php if (is_mobile()) :?>
+          <!-- スマートフォン向けコンテンツ -->
+          <?php else: ?>
+          <?php if ($ad) :?>
+          <?php else: ?>
+          <!-- PC向けコンテンツ -->
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- PhototalもっとビックバナーPC -->
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:970px;height:90px"
+               data-ad-client="ca-pub-6625574146245875"
+               data-ad-slot="4098354003"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <?php endif; ?>
+          <?php endif; ?>
+        </div>
+        <!-- 広告 -->
+
+
 
 <?php require('footer.php');?>
 <?php if($exm_itemno) :?>
@@ -194,5 +219,4 @@ setTimeout(function(){
 </script>
 <?php endif; ?>
 </body>
-
 </html>

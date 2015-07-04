@@ -942,16 +942,17 @@ function f_get_list($db_conn,$payflg,$tabno,$img_class)
         $img_style = '';
       }
       // 
-      $url = 'exm.php?id='.$id.'&url='.$url;
+      // $url = 'exm.php?id='.$id.'&url='.$url;
+      $url ='index.php?exm_itemno='.$id;
       // 
       // $rtn_st .= '<div class="col-md-2 col-sm-6 col-xs-12 text-center" style="margin-top:60px;">';
       $rtn_st .='<div class="col-md-3 col-sm-6 col-xs-12" style="margin-top:60px;">';//col-md-2
       $rtn_st .= '<div>';
-      $rtn_st .= '<a href="'.$url.'" target="_blank">';
+      $rtn_st .= '<a href="'.$url.'" >';
       $rtn_st .= '<img class="'.$img_class.'" src="'.$img_path.'" alt="'.$name.'" '.$img_style.'/></a>';
       $rtn_st .= '</div>';
       $rtn_st .= '<div>';
-      $rtn_st .= '<p><a href="'.$url.'" target="_blank" style="color:white;">'.$name_str.'</a></p>';
+      $rtn_st .= '<p><a href="'.$url.'" style="color:white;">'.$name_str.'</a></p>';
       $rtn_st .= '</div>';
       // $rtn_st .= '<div style="height:20px;">';
       // $rtn_st .= $description_str;

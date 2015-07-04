@@ -14,6 +14,7 @@ switch ($html_page) {
     break;
   case 'list.php':
     $list_st = 'class="active"';
+    break;
   case 'keyword.php':
     $keyword_st = 'class="active"';
     break;
@@ -43,18 +44,18 @@ switch ($html_page) {
         <li <?php echo $pay_st;?>><a href="pay.php"><?php echo $menu_tab3_st;?><small> (<?php echo $tab_pay_cnt;?> site )</small></a></li>
         <li <?php echo $index_st;?>><a href="/"><?php echo $menu_tab4_st;?><small> (<?php echo $tab_all_cnt;?> site )</small></a></li>
         <li <?php echo $list_st;?>><a href="list.php"><?php echo $menu_tab5_st;?><small> (<?php echo $tab_all_cnt;?> site )</small></a></li>
-        <li <?php echo $news_st;?>><a href="list.php"><?php echo $menu_tab6_st;?><small></small></a></li>
+        <li <?php echo $news_st;?>><a href="news.php"><?php echo $menu_tab6_st;?><small></small></a></li>
       </ul>
       <!-- 右メニュー -->
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown ">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="glyphicon glyphicon-pencil"></span> サイト登録 <b class="caret"></b>
+            <span class="glyphicon glyphicon-pencil"></span> サイト追加 <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
             <li class="">
               <a href="add.php">
-                <span class="glyphicon glyphicon-pencil"></span> サイト追加申請
+                <span class="glyphicon glyphicon-pencil"></span> サイト追加フォーム
               </a>
             </li>
           </ul>

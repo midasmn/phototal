@@ -43,6 +43,7 @@ $menu_tab2_st = f_get_tran($db_conn,$language_id,'menu_tab2_st');
 $menu_tab3_st = f_get_tran($db_conn,$language_id,'menu_tab3_st');
 $menu_tab4_st = f_get_tran($db_conn,$language_id,'menu_tab4_st');
 $menu_tab5_st = f_get_tran($db_conn,$language_id,'menu_tab5_st');
+$menu_tab6_st = f_get_tran($db_conn,$language_id,'menu_tab6_st');
 
 $tgcnt = $t0+$t1+$t2;
 $tab_all_cnt = f_get_item_cnt($db_conn,99);
@@ -146,9 +147,7 @@ $html_page='news.php';
 
 
     <div class="row">
-      <!-- アイコン -->
-      <?php require('legend.php');?>
-      <!-- .アイコン -->
+
 
       <div class="row col-md-12 text-center" style="margin-top: 50px;">
         <a class="twitter-timeline" href="https://twitter.com/photomottoZ" data-widget-id="615635634246414337" >@photomottoZさんのツイート</a>
